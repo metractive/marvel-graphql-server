@@ -1,6 +1,6 @@
 const { GraphQLServer } = require('graphql-yoga')
 
-const port = process.env.port || 3000
+const port = process.env.PORT || 5000
 const conn = require('./services/connection')
 
 const resolvers = {
