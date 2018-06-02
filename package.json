@@ -1,0 +1,19 @@
+{
+  "name": "marvel-graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^5.0.1",
+    "graphql-yoga": "^1.14.6",
+    "qs": "^6.5.2"
+  }
+}
