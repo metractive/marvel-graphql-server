@@ -1,6 +1,6 @@
 const { GraphQLServer } = require('graphql-yoga')
 
-const port = process.env.port || 5000
+const port = process.env.port || 3000
 const conn = require('./services/connection')
 
 const resolvers = {
@@ -42,4 +42,4 @@ const server = new GraphQLServer({
     resolvers
 })
 
-server.start({ port }, () => console.log(`Server is running on http://localhost:${port}`))
+server.start({ port }, () => console.log(`Server start on port ${port}`))
