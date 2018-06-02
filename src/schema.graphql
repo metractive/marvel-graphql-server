@@ -1,0 +1,105 @@
+type Query {
+    description: String!
+    allCharacters: [Characters!]!
+    allComics: [Comics!]!
+    allCreators: [Creators!]!
+    allEvents: [Events!]!
+    allSeries: [Series!]!
+    allStories: [Stories!]!
+    getCharacter(id: Int!): Characters
+}
+
+type Characters {
+    id: Int!
+    name: String!
+    description: String!
+    thumbnail: String!
+    urls: [Urls!]!
+    comics: CharactersComics!
+    modified: String!
+}
+
+type CharactersComics {
+    available: Int!
+    items: [ComicSummary!]!
+}
+
+type ComicSummary {
+    name: String!
+    resourceURI: String!
+}
+
+type Comics {
+    id: Int!
+    digitalId: Int!
+    title: String!
+    issueNumber: Float!
+    variantDescription: String!
+    description: String!
+    isbn: String!
+    modified: String!
+}
+
+type Creators {
+    id: Int!
+    firstName: String!
+    middleName: String!
+    lastName: String!
+    suffix: String!
+    fullName: String!
+    resourceURI: String!
+    modified: String!
+    urls: [Urls!]!
+}
+
+type Events {
+    id: Int!
+    title: String!
+    description: String!
+    urls: [Urls!]!
+    thumbnail: String!
+    start: String!
+    end: String!
+    modified: String!
+    next: EventSummary!
+    previous: EventSummary!
+}
+
+type EventSummary {
+    name: String!
+    resourceURI: String!
+}
+
+type Series {
+    id: Int!
+    title: String!
+    description: String!
+    startYear: Int!
+    endYear: Int!
+    rating: String!
+    thumbnail: String!
+    urls: [Urls!]!
+    modified: String!
+    next: SeriesSummary!
+    previous: SeriesSummary!
+}
+
+type SeriesSummary {
+    name: String!
+    resourceURI: String!
+}
+
+type Stories {
+    id: Int!
+    title: String!
+    description: String!
+    type: String!
+    thumbnail: String!
+    urls: [Urls!]!
+    modified: String!
+}
+
+type Urls {
+    type: String!
+    url: String!
+}
