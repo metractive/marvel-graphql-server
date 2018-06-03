@@ -1,11 +1,11 @@
 type Query {
     description: String!
-    allCharacters: [Characters!]!
-    allComics: [Comics!]!
-    allCreators: [Creators!]!
-    allEvents: [Events!]!
-    allSeries: [Series!]!
-    allStories: [Stories!]!
+    allCharacters(offset: Int): [Characters!]!
+    allComics(offset: Int): [Comics!]!
+    allCreators(offset: Int): [Creators!]!
+    allEvents(offset: Int): [Events!]!
+    allSeries(offset: Int): [Series!]!
+    allStories(offset: Int): [Stories!]!
     getCharacter(id: Int!): Characters
 }
 

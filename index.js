@@ -6,12 +6,12 @@ const conn = require('./services/connection')
 const resolvers = {
     Query: {
         description: () => `Marvel's API (Metractive Labs)`,
-        allCharacters: () => conn.fetchApi('/characters'),
-        allComics: () => conn.fetchApi('/comics'),
-        allCreators: () => conn.fetchApi('/creators'),
-        allEvents: () => conn.fetchApi('/events'),
-        allSeries: () => conn.fetchApi('/series'),
-        allStories: () => conn.fetchApi('/stories'),
+        allCharacters: (_, { offset }) => conn.fetchApi('/characters', { offset }),
+        allComics: (_, { offset }) => conn.fetchApi('/comics', { offset }),
+        allCreators: (_, { offset }) => conn.fetchApi('/creators', { offset }),
+        allEvents: (_, { offset }) => conn.fetchApi('/events', { offset }),
+        allSeries: (_, { offset }) => conn.fetchApi('/series', { offset }),
+        allStories: (_, { offset }) => conn.fetchApi('/stories', { offset }),
         getCharacter: (_, { id }) => conn.fetchApi(`/characters/${id}`)
             .then(character => (character) ? character[0] : {})
     },
